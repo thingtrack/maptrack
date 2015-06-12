@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Export-Package: com.thingtrack.konekti.map.service;version="0.0.1.SNAP
+ SHOT",com.thingtrack.konekti.map.service.api;version="0.0.1.SNAPSHOT"
+ ;uses:="com.thingtrack.konekti.map.domain"
+Built-By: Thingtrack S.L.
+Tool: Bundlor 1.1.1.RELEASE
+Bundle-Name: Konekti Map Service Api
+Created-By: Maven Integration for Eclipse
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Version: 0.0.1.SNAPSHOT
+Build-Jdk: 1.6.0_37
+Bundle-ManifestVersion: 2
+Bundle-Description: Konekti Map Service Api
+Bundle-SymbolicName: com.thingtrack.konekti.map.service.api
+Import-Package: com.thingtrack.konekti.map.domain
+

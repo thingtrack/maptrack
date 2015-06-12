@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Export-Package: com.thingtrack.konekti.map.service.impl;version="0.0.1
+ .SNAPSHOT",com.thingtrack.konekti.map.service.impl.internal;version="
+ 0.0.1.SNAPSHOT";uses:="com.thingtrack.konekti.map.domain,com.thingtra
+ ck.konekti.map.service.api,org.springframework.beans.factory.annotati
+ on"
+Built-By: Thingtrack S.L.
+Tool: Bundlor 1.1.1.RELEASE
+Import-Library: org.springframework.spring;version="[3.0.5.RELEASE,3.0
+ .5.RELEASE]"
+Bundle-Name: Konekti Map Service Implementation
+Created-By: Maven Integration for Eclipse
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Version: 0.0.1.SNAPSHOT
+Build-Jdk: 1.6.0_37
+Bundle-ManifestVersion: 2
+Bundle-Description: Konekti Map Service Implementation
+Bundle-SymbolicName: com.thingtrack.konekti.map.service.impl
+Import-Package: com.mysql.jdbc.exceptions.jdbc4,com.thingtrack.konekti
+ .dao.template,com.thingtrack.konekti.map.dao.api,com.thingtrack.konek
+ ti.map.domain,com.thingtrack.konekti.map.service.api,javax.persistenc
+ e.metamodel,org.aspectj.lang,org.aspectj.runtime.reflect,org.springfr
+ amework.beans.factory.annotation,org.springframework.transaction
+

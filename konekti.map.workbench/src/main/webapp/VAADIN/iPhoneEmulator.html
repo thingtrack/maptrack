@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+  <title>Emulador Konekti Map</title>
+  
+  <!-- Define the application configuration -->
+  <script type="text/javascript">
+    var vaadin = {
+      vaadinConfigurations: {
+        konektimap: {
+          appUri:'http://192.168.1.49:8080/konekti.map.mobile?map=1&user=1&card=directory',
+          pathInfo: '/',
+          themeUri:'/konekti.map.workbench/VAADIN/themes/konektimap',
+          versionInfo : {}}
+      }};
+  </script>
+  
+  <!-- Load the widget set, that is, the Client-Side Engine -->
+  <script language='javascript' src='/konekti.map.workbench/VAADIN/themes/konektimap/OpenLayers.js'></script>
+  <script language='javascript' src='/konekti.map.workbench/VAADIN/widgetsets/com.thingtrack.konekti.map.workbench.gwt.KonektiMapWidgetSet/helpers.js'></script>
+  <script language='javascript' src='/konekti.map.workbench/VAADIN/widgetsets/com.thingtrack.konekti.map.workbench.gwt.KonektiMapWidgetSet/com.thingtrack.konekti.map.workbench.gwt.KonektiMapWidgetSet.nocache.js'></script>
+
+  <!-- Load the style sheet -->
+  <link rel="stylesheet" type="text/css" href="/konekti.map.workbench/VAADIN/themes/konektimap/styles.css"/>
+</head>
+
+<body>
+  <!-- GWT requires an invisible history frame is needed for page/fragment history in the browser                  -->
+  <iframe tabIndex="-1" id="__gwt_historyFrame" style="position:absolute;width:0;height:0;border:0;overflow:hidden;" src="javascript:false"></iframe>
+
+  <h1>Embedding a Vaadin Application</h1>
+    
+  <p>This is a static web page that contains an embedded Vaadin application. It's here:</p>
+
+  <!-- So here comes the div element in which the Vaadin application is embedded.                          -->
+  <div id="konektimap" style="width:1000px; height:500px; border: 2px solid green;"></div>
+  
+  <p>Please view the page source to see how embedding works.</p>
+
+  <noscript>You have to enable javascript in your browser to use an application built with Vaadin.</noscript>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:osgi="http://www.springframework.org/schema/osgi"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                      http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd">
+
+  <!-- definitions using elements of the osgi namespace can be included
+       in this file. There is no requirement to keep these definitions
+       in a separate file if you do not want to. The rationale for 
+       keeping these definitions separate is to facilitate integration
+       testing of the bundle outside of an OSGi container -->
+       
+       <osgi:reference id="transactionManager" interface="org.springframework.transaction.PlatformTransactionManager" />
+       
+       <osgi:reference id="userDao" interface="com.thingtrack.konekti.map.dao.api.UserDao" />
+       <osgi:reference id="mapDao" interface="com.thingtrack.konekti.map.dao.api.MapDao" />
+       <osgi:reference id="campaignDao" interface="com.thingtrack.konekti.map.dao.api.CampaignDao" />
+       <osgi:reference id="campaignTypeDao" interface="com.thingtrack.konekti.map.dao.api.CampaignTypeDao" />
+       <osgi:reference id="campaignStatusDao" interface="com.thingtrack.konekti.map.dao.api.CampaignStatusDao" />
+       <osgi:reference id="couponDao" interface="com.thingtrack.konekti.map.dao.api.CouponDao" />
+       <osgi:reference id="couponTypeDao" interface="com.thingtrack.konekti.map.dao.api.CouponTypeDao" />
+       <osgi:reference id="cardDao" interface="com.thingtrack.konekti.map.dao.api.CardDao" />
+       <osgi:reference id="cardTypeDao" interface="com.thingtrack.konekti.map.dao.api.CardTypeDao" />
+       <osgi:reference id="markerDao" interface="com.thingtrack.konekti.map.dao.api.MarkerDao" />
+       <osgi:reference id="markerTypeDao" interface="com.thingtrack.konekti.map.dao.api.MarkerTypeDao" />
+        
+       <osgi:service ref="userService" interface="com.thingtrack.konekti.map.service.api.UserService"/>
+       <osgi:service ref="mapService" interface="com.thingtrack.konekti.map.service.api.MapService"/>
+       <osgi:service ref="campaignService" interface="com.thingtrack.konekti.map.service.api.CampaignService"/>
+       <osgi:service ref="campaignTypeService" interface="com.thingtrack.konekti.map.service.api.CampaignTypeService"/>
+       <osgi:service ref="campaignStatusService" interface="com.thingtrack.konekti.map.service.api.CampaignStatusService"/>
+       <osgi:service ref="couponService" interface="com.thingtrack.konekti.map.service.api.CouponService"/>
+       <osgi:service ref="couponTypeService" interface="com.thingtrack.konekti.map.service.api.CouponTypeService"/>
+       <osgi:service ref="cardService" interface="com.thingtrack.konekti.map.service.api.CardService"/>
+       <osgi:service ref="cardTypeService" interface="com.thingtrack.konekti.map.service.api.CardTypeService"/>
+       <osgi:service ref="markerService" interface="com.thingtrack.konekti.map.service.api.MarkerService"/>
+       <osgi:service ref="markerTypeService" interface="com.thingtrack.konekti.map.service.api.MarkerTypeService"/>
+        
+</beans>

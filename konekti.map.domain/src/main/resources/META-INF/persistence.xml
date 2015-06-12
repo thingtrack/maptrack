@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" 
+    		 xmlns="http://java.sun.com/xml/ns/persistence"
+    		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    		 xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+
+    <persistence-unit name="konekti.map" transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+	
+	    <!-- Koneti Map Domain -->
+	    <class>com.thingtrack.konekti.map.domain.User</class>
+	    <class>com.thingtrack.konekti.map.domain.Map</class>
+		<class>com.thingtrack.konekti.map.domain.Campaign</class>
+	    <class>com.thingtrack.konekti.map.domain.CampaignStatus</class>
+	    <class>com.thingtrack.konekti.map.domain.CampaignType</class>
+		<class>com.thingtrack.konekti.map.domain.Coupon</class>
+		<class>com.thingtrack.konekti.map.domain.CouponType</class>
+		<class>com.thingtrack.konekti.map.domain.Card</class>
+		<class>com.thingtrack.konekti.map.domain.CardType</class>
+		<class>com.thingtrack.konekti.map.domain.Marker</class>
+	    <class>com.thingtrack.konekti.map.domain.MarkerType</class>
+	    
+	      <!-- Koneti Extras Domain -->
+<!-- 	    <class>com.thingtrack.konekti.map.domain.extras.Extra</class> -->
+<!-- 	  	<class>com.thingtrack.konekti.map.domain.extras.Test</class> -->
+	  
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+				
+		<shared-cache-mode>NONE</shared-cache-mode>
+		
+	   	<properties>
+            <!--
+            <property name="eclipselink.target-database" value="PostgreSQL"/>
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://127.0.0.1:5432/bustrackdb"/>
+            <property name="javax.persistence.jdbc.user" value="konekti"/>
+            <property name="javax.persistence.jdbc.password" value="B33982307"/> 
+            -->
+							
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/konektimapdb"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value="B33982307"/>
+                        
+            <property name="eclipselink.target-database" value="MySQL"/> 
+            <property name="eclipselink.logging.level" value="FINE"/>
+            <property name="eclipselink.logging.timestamp" value="false"/>
+            <property name="eclipselink.logging.thread" value="false"/>
+            <property name="eclipselink.logging.exceptions" value="true"/>
+            <property name="eclipselink.orm.throw.exceptions" value="true"/>
+            <property name="eclipselink.jdbc.read-connections.min" value="1"/>
+            <property name="eclipselink.jdbc.write-connections.min" value="1"/>    
+            <property name="eclipselink.ddl-generation" value="create-tables"/>
+<!-- 			<property name="eclipselink.ddl-generation" value="drop-and-create-tables"/> -->
+            <property name="eclipselink.ddl-generation.output-mode" value="both"/>            
+            <property name="eclipselink.weaving" value="false"/>	
+        </properties>
+    </persistence-unit>
+</persistence>

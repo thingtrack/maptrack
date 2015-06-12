@@ -1,0 +1,58 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.thingtrack</groupId>
+  <artifactId>konekti.map</artifactId>
+  <version>0.0.1.SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>Map Parent Project</name>
+  <url>http://maven.apache.org</url>
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <konekti.version>0.0.1.SNAPSHOT</konekti.version>
+    <konekti.folder>${konektiFolder}</konekti.folder>
+  </properties>
+
+  <modules>
+    <module>../konekti.map.domain</module>
+  	<module>../konekti.map.dao.api</module>
+  	<module>../konekti.map.dao.impl</module>
+  	<module>../konekti.map.service.api</module>
+  	<module>../konekti.map.service.impl</module>
+  	<module>../konekti.map.workbench</module>
+   	<module>../konekti.map.mobile</module>
+  </modules>
+  
+  <build>
+	 <plugins>
+		<plugin>
+			<artifactId>maven-antrun-plugin</artifactId>
+			<version>1.6</version>
+			<executions>
+			    <execution>
+			        <phase>package</phase>
+			        <configuration>
+			            <target>
+     		                <copy file="../konekti.map.domain/target/com.thingtrack.konekti.map.domain-${konekti.version}.jar" tofile="${konekti.folder}/com.thingtrack.konekti.map.domain-${konekti.version}.jar" />
+     		                <copy file="../konekti.dao.template/target/com.thingtrack.konekti.dao.template-${konekti.version}.jar" tofile="${konekti.folder}/com.thingtrack.konekti.dao.template-${konekti.version}.jar" />
+			                <copy file="../konekti.map.dao.api/target/com.thingtrack.konekti.map.dao.api-${konekti.version}.jar" tofile="${konekti.folder}/com.thingtrack.konekti.map.dao.api-${konekti.version}.jar" />
+			                <copy file="../konekti.map.dao.impl/target/com.thingtrack.konekti.map.dao.impl-${konekti.version}.jar" tofile="${konekti.folder}/com.thingtrack.konekti.map.dao.impl-${konekti.version}.jar" />
+			                <copy file="../konekti.map.service.api/target/com.thingtrack.konekti.map.service.api-${konekti.version}.jar" tofile="${konekti.folder}/com.thingtrack.konekti.map.service.api-${konekti.version}.jar" />			                
+			                <copy file="../konekti.map.service.impl/target/com.thingtrack.konekti.map.service.impl-${konekti.version}.jar" tofile="${konekti.folder}/com.thingtrack.konekti.map.service.impl-${konekti.version}.jar" />
+			                <copy file="../konekti.map.workbench/target/com.thingtrack.konekti.map.workbench-${konekti.version}.war" tofile="${konekti.folder}/com.thingtrack.konekti.map.workbench-${konekti.version}.war" />
+			                <copy file="../konekti.map.mobile/target/com.thingtrack.konekti.map.mobile-${konekti.version}.war" tofile="${konekti.folder}/com.thingtrack.konekti.map.mobile-${konekti.version}.war" />
+			            </target>
+			        </configuration>
+			        <goals>
+			            <goal>run</goal>
+			        </goals>
+			    </execution>
+			</executions>
+		</plugin>
+	 </plugins>
+ </build>
+   
+</project>

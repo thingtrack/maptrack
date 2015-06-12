@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Export-Package: com.thingtrack.konekti.map.dao.impl;version="0.0.1.SNA
+ PSHOT",com.thingtrack.konekti.map.dao.impl.internal;version="0.0.1.SN
+ APSHOT";uses:="com.thingtrack.konekti.dao.template,com.thingtrack.kon
+ ekti.map.dao.api,com.thingtrack.konekti.map.domain"
+Built-By: Thingtrack S.L.
+Tool: Bundlor 1.1.1.RELEASE
+Bundle-Name: Konekti Map Dao Implementation
+Created-By: Maven Integration for Eclipse
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Version: 0.0.1.SNAPSHOT
+Build-Jdk: 1.6.0_37
+Bundle-ManifestVersion: 2
+Bundle-Description: Konekti Map Dao Implementation
+Bundle-SymbolicName: com.thingtrack.konekti.map.dao.impl
+Import-Package: com.thingtrack.konekti.dao.template,com.thingtrack.kon
+ ekti.map.dao.api,com.thingtrack.konekti.map.domain,javax.persistence,
+ javax.persistence.metamodel,org.aopalliance.aop,org.springframework.a
+ op,org.springframework.aop.framework,org.springframework.orm.jpa,org.
+ springframework.transaction
+

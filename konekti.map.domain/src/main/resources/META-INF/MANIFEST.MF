@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Export-Package: com.thingtrack.konekti.map;version="0.0.1.SNAPSHOT",co
+ m.thingtrack.konekti.map.domain;version="0.0.1.SNAPSHOT";uses:="javax
+ .persistence",com.thingtrack.konekti.map.domain.extras;version="0.0.1
+ .SNAPSHOT";uses:="javax.persistence",com.thingtrack.konekti.map.domai
+ n.extras.internal;version="0.0.1.SNAPSHOT"
+Bundle-ClassPath: .,konekti.map.domain.extras-0.0.1.SNAPSHOT.jar
+Built-By: Thingtrack S.L.
+Tool: Bundlor 1.1.1.RELEASE
+Bundle-Name: Konekti Map Domain
+Created-By: Maven Integration for Eclipse
+Meta-Persistence: META-INF/persistence.xml
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Build-Jdk: 1.6.0_37
+Bundle-Version: 0.0.1.SNAPSHOT
+Bundle-ManifestVersion: 2
+Bundle-Description: Konekti Map Domain
+Bundle-SymbolicName: com.thingtrack.konekti.map.domain
+Import-Package: javax.persistence,org.eclipse.persistence.jpa
+

@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <parent>
+  	<groupId>com.thingtrack</groupId>
+  	<artifactId>konekti.maven.parent</artifactId>
+  	<version>0.0.1.SNAPSHOT</version>
+  </parent>
+  
+  <artifactId>konekti.map.workbench</artifactId>
+  <packaging>war</packaging>
+
+  <name>Konekti Map Workbench</name>
+  <description>Konekti Map Workbench</description>
+  
+  <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<gwt.version>2.3.0</gwt.version>
+		<gwt.plugin.version>2.2.0</gwt.plugin.version>
+		<slf4j.version>1.5.0</slf4j.version>
+		<spring.maven.artifact.version>3.0.5.RELEASE</spring.maven.artifact.version>
+  </properties>
+
+  <dependencies>    
+		<!-- Vaadin Addon Component Dependencies -->		
+		<dependency>
+			<groupId>com.thingtrack</groupId>
+			<artifactId>com.vaadin.addons.osgi</artifactId>
+			<version>0.0.1.SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>	    
+		
+		<dependency>
+			<groupId>org.dellroad</groupId>
+			<artifactId>dellroad-stuff-vaadin</artifactId>
+			<version>1.0.284</version>
+			<scope>provided</scope>
+		</dependency>	  
+		<dependency>
+		   <groupId>org.vaadin.addons</groupId>
+		   <artifactId>formbinder</artifactId>
+		   <version>2.1.2</version>
+		   <scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.vaadin.addons</groupId>
+			<artifactId>customfield</artifactId>
+			<version>1.0.0</version>
+			<scope>provided</scope>
+		</dependency>
+					
+    	<dependency>
+	      	<groupId>com.google.gwt</groupId>
+	      	<artifactId>gwt-user</artifactId>
+	      	<version>${gwt.version}</version>
+	      	<scope>provided</scope>
+    	</dependency>
+    	
+    	<dependency>
+      		<groupId>javax.validation</groupId>
+      		<artifactId>validation-api</artifactId>
+      		<version>1.0.0.GA</version>
+      		<scope>provided</scope>
+    	</dependency>
+    	
+    	<dependency>
+      		<groupId>javax.validation</groupId>
+      		<artifactId>validation-api</artifactId>
+      		<version>1.0.0.GA</version>
+      		<classifier>sources</classifier>
+      		<scope>provided</scope>
+		</dependency>
+		
+    	<dependency>
+    		<groupId>com.thingtrack</groupId>
+    		<artifactId>konekti.map.domain</artifactId>
+    		<version>0.0.1.SNAPSHOT</version>
+    		<scope>provided</scope>
+    	</dependency>
+    	
+    	<dependency>
+    		<groupId>com.thingtrack</groupId>
+    		<artifactId>konekti.map.service.api</artifactId>
+    		<version>0.0.1.SNAPSHOT</version>
+    		<scope>provided</scope>
+    	</dependency>
+    	
+		<dependency>
+		   <groupId>org.vaadin.vol</groupId>
+		   <artifactId>openlayers-wrapper</artifactId>
+		   <version>1.2.0</version>
+		   <scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+		   <groupId>org.vaadin.addons</groupId>
+		   <artifactId>css-tools</artifactId>
+		   <version>0.3</version>
+		   <scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+		   <groupId>org.krysalis</groupId>
+		   <artifactId>barcode4j</artifactId>
+		   <version>2.1.0</version>
+		   <scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.google.zxing</groupId>
+			<artifactId>core</artifactId>
+			<version>1.7</version>
+			<scope>provided</scope>
+		</dependency>
+				
+<!-- 		<dependency> -->
+<!-- 		   <groupId>code.google.com</groupId> -->
+<!-- 		   <artifactId>zxing</artifactId> -->
+<!-- 		   <version>1.7</version> -->
+<!-- 		   <scope>provided</scope> -->
+<!-- 		</dependency>  -->
+		
+		<dependency>
+		   <groupId>org.vaadin.addons</groupId>
+		   <artifactId>imagefilter</artifactId>
+		   <version>0.5.3</version>
+		   <scope>provided</scope>
+		</dependency>		
+  </dependencies>
+ 
+ 	<!-- ================================================ -->
+	<!-- Build Configuration -->
+	<!-- ================================================ -->
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.virgo.bundlor</groupId>
+				<artifactId>org.eclipse.virgo.bundlor.maven</artifactId>
+				<version>1.1.1.RELEASE</version>
+				<configuration>
+					<outputPath>${basedir}/src/main/resources</outputPath>
+					<manifestTemplate>
+					<![CDATA[
+Bundle-ManifestVersion: 2
+Bundle-Description: Konekti Map Workbench Application
+Bundle-Name: Konekti Map Workbench Application
+Bundle-SymbolicName: ${groupId}.${artifactId}
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Version: ${version}
+Import-Package: org.eclipse.virgo.web.dm, 
+ com.vaadin.terminal.gwt.server,
+ com.vaadin.terminal.gwt.client.ui.dd,
+ com.vaadin.terminal, 
+ com.vaadin.tools,
+ com.vaadin.event, 
+ com.vaadin.event.dd, 
+ com.vaadin.event.dd.acceptcriteria,
+ com.vaadin.data,
+ com.vaadin.data.util,
+ com.vaadin.data.validator,
+ com.vaadin.ui,
+ com.vaadin.annotations,  
+ org.aspectj.lang,
+ org.aspectj.lang.annotation,
+ org.aspectj.runtime.reflect,
+ org.slf4j;version="[1.6.1,2)",
+ org.slf4j.helpers;version="[1.6.1,2)",
+ org.slf4j.spi;version="[1.6.1,2)",
+ org.slf4j.impl;version="[1.6.1,2)",
+ org.apache.log4j
+Web-ContextPath: konekti.map.workbench
+Bundle-Classpath: WEB-INF/classes
+Import-Library: 
+ org.springframework.spring;version="[3.0.5.RELEASE,3.0.5.RELEASE]"
+]]>
+					</manifestTemplate>
+				</configuration>
+				<!-- generate the manifest automatically during packaging -->
+				<executions>
+					<execution>
+						<id>bundlor</id>
+						<goals>
+							<goal>bundlor</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifestFile>src/main/resources/META-INF/MANIFEST.MF</manifestFile>
+					</archive>
+					<webResources>
+						<webResource>
+							<directory>src/main/resources</directory>
+							<filtering>true</filtering>
+							<includes>
+								<include>META-INF/MANIFEST.MF</include>
+								<include>META-INF/*.xml</include>
+							</includes>
+						</webResource>
+					</webResources>
+				</configuration>
+			</plugin>
+			
+			<!-- Compile custom GWT components or widget dependencies with the GWT compiler -->
+	        <plugin>
+		        <groupId>org.codehaus.mojo</groupId>
+		        <artifactId>gwt-maven-plugin</artifactId>
+		        <version>${gwt.plugin.version}</version>
+		        <configuration>
+		          <webappDirectory>${project.build.directory}/${project.build.finalName}/VAADIN/widgetsets</webappDirectory>
+		          <extraJvmArgs>-Xmx512M -Xss1024k</extraJvmArgs>
+		          <runTarget>db4o.web</runTarget>
+		          <hostedWebapp>${project.build.directory}/${project.build.finalName}</hostedWebapp>
+		          <noServer>true</noServer>
+		          <port>8080</port>
+		          <compileReport>false</compileReport>
+		        </configuration>
+		        <executions>
+		          <execution>
+		            <goals>
+		              <goal>resources</goal>
+		              <goal>compile</goal>
+		            </goals>
+		          </execution>
+		        </executions>
+		        <dependencies>
+		          <dependency>
+		            <groupId>com.google.gwt</groupId>
+		            <artifactId>gwt-dev</artifactId>
+		            <version>${gwt.version}</version>
+		          </dependency>
+		          <dependency>
+		            <groupId>com.google.gwt</groupId>
+		            <artifactId>gwt-user</artifactId>
+		            <version>${gwt.version}</version>
+		          </dependency>
+		        </dependencies>
+	      </plugin>
+	      <plugin>
+	        <groupId>com.vaadin</groupId>
+	        <artifactId>vaadin-maven-plugin</artifactId>
+	        <version>1.0.2</version>
+	        <executions>
+	          <execution>
+	            <configuration>
+	            </configuration>
+	            <goals>
+	              <goal>update-widgetset</goal>
+	            </goals>
+	          </execution>
+	        </executions>
+	      </plugin>		
+		</plugins>
+		
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.eclipse.virgo.bundlor
+										</groupId>
+										<artifactId>
+											org.eclipse.virgo.bundlor.maven
+										</artifactId>
+										<versionRange>
+											[1.1.1.RELEASE,)
+										</versionRange>
+										<goals>
+											<goal>bundlor</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.codehaus.mojo
+										</groupId>
+										<artifactId>
+											gwt-maven-plugin
+										</artifactId>
+										<versionRange>
+											[2.2.0,)
+										</versionRange>
+										<goals>
+											<goal>resources</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>com.vaadin</groupId>
+										<artifactId>
+											vaadin-maven-plugin
+										</artifactId>
+										<versionRange>
+											[1.0.2,)
+										</versionRange>
+										<goals>
+											<goal>
+												update-widgetset
+											</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>
